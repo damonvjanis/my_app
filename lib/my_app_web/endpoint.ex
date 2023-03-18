@@ -2,6 +2,11 @@ defmodule MyAppWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :my_app
   use SiteEncrypt.Phoenix
 
+  @impl Phoenix.Endpoint
+  def init(_key, config) do
+    {:ok, SiteEncrypt.Phoenix.configure_https(config)}
+  end
+
   @impl SiteEncrypt
   def certification do
     SiteEncrypt.configure(
