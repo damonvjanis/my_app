@@ -25,7 +25,6 @@ if config_env() == :prod do
 
   config :my_app, MyApp.Repo,
     # ssl: true,
-    url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
     socket_options: maybe_ipv6
 
@@ -41,8 +40,7 @@ if config_env() == :prod do
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: port
-    ],
-    secret_key_base: secret_key_base
+    ]
 
   # ## SSL Support
   #
