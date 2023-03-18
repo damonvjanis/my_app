@@ -17,7 +17,7 @@ defmodule MyApp.Application do
       # Start Finch
       {Finch, name: MyApp.Finch},
       # Start the Endpoint (http/https)
-      MyAppWeb.Endpoint
+      {SiteEncrypt.Phoenix, MyAppWeb.Endpoint}
       # Start a worker by calling: MyApp.Worker.start_link(arg)
       # {MyApp.Worker, arg}
     ]
