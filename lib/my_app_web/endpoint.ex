@@ -11,8 +11,8 @@ defmodule MyAppWeb.Endpoint do
   def certification do
     SiteEncrypt.configure(
       client: :native,
-      domains: ["remote-st-george.com", "www.remote-st-george.com"],
-      emails: ["damonvjanis@gmail.com"],
+      domains: ["example.com", "www.example.com"],
+      emails: ["you@example.com"],
       db_folder: Application.get_env(:my_app, :cert_path, "tmp/site_encrypt_db"),
       directory_url:
         case Application.get_env(:my_app, :cert_mode, "local") do

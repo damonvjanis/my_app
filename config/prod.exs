@@ -10,7 +10,7 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :my_app, MyAppWeb.Endpoint,
-  url: [host: "remote-st-george.com", port: 443],
+  url: [host: "example.com", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   force_ssl: [hsts: true],
@@ -22,7 +22,7 @@ config :my_app, MyAppWeb.Endpoint,
   ]
 
 # Set path to cert folder
-config :my_app, :cert_path, "/home/Damon/site_encrypt_db"
+config :my_app, :cert_path, "/home/<YOUR_USERNAME>/site_encrypt_db"
 
 # Set the cert mode so site_encrypt knows to hit live LetsEncrypt
 config :my_app, :cert_mode, "production"
