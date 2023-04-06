@@ -17,6 +17,7 @@ config :my_app, MyApp.Repo,
 # you can enable the server option below.
 config :my_app, MyAppWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
+  https: [port: 4001],
   secret_key_base: "fcuMLZU/5od76ldCCyHq4YVjmZ8Bz0R994Gzy/Ruz4lSTVZgUfSr75PWaAawLWF0",
   server: false
 
@@ -31,3 +32,7 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+if System.get_env("CI") do
+  import_config "test.secret.exs"
+end
